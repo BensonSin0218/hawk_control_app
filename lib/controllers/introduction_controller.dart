@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hawk_control_app/data/constants.dart';
+import 'package:hawk_control_app/data/styles.dart';
+import 'package:hawk_control_app/data/translations/keys.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
 import 'package:hawk_control_app/views/components/introduction_container.dart';
 
@@ -10,10 +12,13 @@ class IntroductionController extends GetxController {
 
   RxInt pageIndex = 0.obs;
   List<Widget> pages = [
-    const IntroductionContainer(title: 'Introduction 1'),
-    const IntroductionContainer(
-      title: 'Introduction 2',
-      description: "I am description 2",
+    IntroductionContainer(
+      title: PageTranslationKeys.introductionPage1Title.tr,
+      description: PageTranslationKeys.introductionPage1Description.tr,
+    ),
+    IntroductionContainer(
+      title: PageTranslationKeys.introductionPage2Title.tr,
+      description: PageTranslationKeys.introductionPage2Description.tr,
     )
   ];
   PageController pageController = PageController();

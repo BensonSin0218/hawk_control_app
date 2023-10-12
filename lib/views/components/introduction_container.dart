@@ -2,28 +2,30 @@ import 'package:flutter/material.dart';
 
 class IntroductionContainer extends StatelessWidget {
   final String title;
-  final Color backgroundColor;
-  final String? description;
+  final String description;
+  final Color? backgroundColor;
   final Image? image;
 
   const IntroductionContainer(
       {super.key,
       required this.title,
-      this.backgroundColor = Colors.white,
-      this.description,
+      required this.description,
+      this.backgroundColor,
       this.image});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: backgroundColor,
+      color: backgroundColor ?? Theme.of(context).colorScheme.background,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            title,
-            style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-          ),
-          if (description != null) Text(description!)
+          Text(title,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineLarge
+                  ?.copyWith(fontWeight: FontWeight.bold)),
+          Text(description, style: Theme.of(context).textTheme.bodyLarge),
         ],
       ),
     );

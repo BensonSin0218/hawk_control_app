@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hawk_control_app/data/constants.dart';
+import 'package:hawk_control_app/data/translations/keys.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
 
 class StartPage extends StatelessWidget {

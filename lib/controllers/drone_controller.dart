@@ -1,4 +1,3 @@
-import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:socket_io_client/socket_io_client.dart' as SocketIO;

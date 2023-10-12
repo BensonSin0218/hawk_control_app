@@ -1,13 +1,19 @@
 import 'package:get/route_manager.dart';
-import 'package:hawk_control_app/data/constants.dart';
+import 'package:hawk_control_app/data/translations/keys.dart';
 
-class AppTranslations extends Translations {
+class Messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en_US': {
           TranslationKeys.connect: 'Connect',
           TranslationKeys.ipAddress: 'IP Address',
           PageTranslationKeys.introductionPageTitle: 'Introduction Page',
+          PageTranslationKeys.introductionPage1Title: 'Introduction 1',
+          PageTranslationKeys.introductionPage1Description:
+              'Introduction 1 Description',
+          PageTranslationKeys.introductionPage2Title: 'Introduction 2',
+          PageTranslationKeys.introductionPage2Description:
+              'Introduction 2 Description',
           PageTranslationKeys.startPageTitle: 'Start Page',
           PageTranslationKeys.startPageConnectToNewDrone:
               'Connect to new drone!',
@@ -19,6 +25,10 @@ class AppTranslations extends Translations {
           TranslationKeys.connect: '連接',
           TranslationKeys.ipAddress: 'IP位址',
           PageTranslationKeys.introductionPageTitle: '简介页',
+          PageTranslationKeys.introductionPage1Title: '简介 1',
+          PageTranslationKeys.introductionPage1Description: '简介 1 Description',
+          PageTranslationKeys.introductionPage2Title: '简介 2',
+          PageTranslationKeys.introductionPage2Description: '简介 2 Description',
           PageTranslationKeys.startPageTitle: '起始页',
           PageTranslationKeys.startPageConnectToNewDrone: '連接到新的無人機!',
           PageTranslationKeys.connectionPageTitle: '連接頁面',
@@ -29,6 +39,10 @@ class AppTranslations extends Translations {
           TranslationKeys.connect: '连接',
           TranslationKeys.ipAddress: 'IP地址',
           PageTranslationKeys.introductionPageTitle: '簡介頁',
+          PageTranslationKeys.introductionPage1Title: '簡介 1',
+          PageTranslationKeys.introductionPage1Description: '簡介 1 Description',
+          PageTranslationKeys.introductionPage2Title: '簡介 2',
+          PageTranslationKeys.introductionPage2Description: '簡介 2 Description',
           PageTranslationKeys.startPageTitle: '起始頁',
           PageTranslationKeys.startPageConnectToNewDrone: '连接到新的无人机!',
           PageTranslationKeys.connectionPageTitle: '连接页面',

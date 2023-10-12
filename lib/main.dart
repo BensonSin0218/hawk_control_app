@@ -1,10 +1,10 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hawk_control_app/bindings/init_binding.dart';
-import 'package:hawk_control_app/data/app_translations.dart';
+import 'package:hawk_control_app/data/translations/messages.dart';
+import 'package:hawk_control_app/data/styles.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
 
 class HawkControlApp extends StatelessWidget {
@@ -13,15 +13,17 @@ class HawkControlApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialBinding: InitBinding(),
-      translations: AppTranslations(),
+      initialRoute: AppRoutes.splash,
+      theme: ThemeScheme.light,
+      darkTheme: ThemeScheme.dark,
       locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('zh', 'HK'),
-      initialRoute: AppRoutes.splash,
-      unknownRoute: AppPages.notFound,
-      getPages: AppPages.routes,
+      translations: Messages(),
       defaultTransition: Transition.rightToLeftWithFade,
+      getPages: AppPages.routes,
+      initialBinding: InitBinding(),
+      unknownRoute: AppPages.notFound,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
