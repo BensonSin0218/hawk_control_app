@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hawk_control_app/controllers/drone_controller.dart';
 import 'package:hawk_control_app/data/constants.dart';
+import 'package:hawk_control_app/routes/app_pages.dart';
+import 'package:hawk_control_app/utils/validations.dart';
 
 class ConnectionPage extends StatelessWidget {
   const ConnectionPage({super.key});
@@ -39,7 +41,23 @@ class ConnectionPage extends StatelessWidget {
                   Obx(
                     () => ElevatedButton(
                       onPressed: droneController.ipAddress.value.isNotEmpty
-                          ? droneController.connectToDrone
+                          ? () {
+                              if (!isIPAddress(
+                                  droneController.ipAddress.value)) {
+                                Get.showSnackbar(GetSnackBar(
+                                  title: ErrorTranslationKeys.error.tr,
+                                  message:
+                                      ErrorTranslationKeys.illegalIPAddress.tr,
+                                  backgroundColor: Colors.red,
+                                  duration: Durations.errorSnackBar,
+                                  snackPosition: SnackPosition.TOP,
+                                ));
+                                return;
+                              }
+
+                              droneController.connectToDrone();
+                              Get.toNamed(AppRoutes.control);
+                            }
                           : null,
                       child: Text(TranslationKeys.connect.tr),
                     ),

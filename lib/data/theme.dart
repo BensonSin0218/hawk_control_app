@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ColorScheme {}
+class ColorScheme {
+  static const Color error = Colors.red;
+}
 
 class Theme {
   static ThemeData dark = ThemeData();
