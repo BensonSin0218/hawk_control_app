@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 class AppColor {
   static const Color primary = Colors.blue;
-  static const Color secondary = Colors.blueAccent;
+  static const Color onPrimary = Colors.blueAccent;
+  static final Color secondary = Colors.blue.shade500;
+  static final Color onSecondary = Colors.blueAccent.shade400;
 
   static final Color background = Colors.grey.shade900;
+  static final Color onBackground = Colors.grey.shade600;
 
   static const Color error = Colors.red;
+  static final Color onError = Colors.red.shade500;
 }
 
 class Durations {
@@ -21,13 +25,13 @@ class ThemeScheme {
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
       primary: AppColor.primary,
-      onPrimary: AppColor.primary,
+      onPrimary: AppColor.onPrimary,
       secondary: AppColor.secondary,
-      onSecondary: AppColor.secondary,
+      onSecondary: AppColor.onSecondary,
       error: AppColor.error,
-      onError: AppColor.error,
+      onError: AppColor.onError,
       background: AppColor.background,
-      onBackground: Colors.black87,
+      onBackground: AppColor.onBackground,
       surface: Colors.white,
       onSurface: Colors.white,
     ),

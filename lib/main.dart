@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hawk_control_app/bindings/init_binding.dart';
+import 'package:hawk_control_app/controllers/theme_controller.dart';
 import 'package:hawk_control_app/data/translations/messages.dart';
 import 'package:hawk_control_app/data/styles.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
@@ -12,10 +13,15 @@ class HawkControlApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeController themeController = Get.put(ThemeController());
+
     return GetMaterialApp(
       initialRoute: AppRoutes.splash,
       theme: ThemeScheme.light,
       darkTheme: ThemeScheme.dark,
+      themeMode: themeController.isLightThemeMode.value
+          ? ThemeMode.light
+          : ThemeMode.dark,
       locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('zh', 'HK'),
       translations: Messages(),
@@ -36,7 +42,7 @@ Future<void> main() async {
    */
   await SystemChrome.setPreferredOrientations(
       [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
-
   await GetStorage.init();
+
   runApp(const HawkControlApp());
 }
