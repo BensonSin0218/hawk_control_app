@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hawk_control_app/controllers/locale_controller.dart';
 import 'package:hawk_control_app/controllers/theme_controller.dart';
-import 'package:hawk_control_app/data/class/language.dart';
+import 'package:hawk_control_app/data/enums/language.dart';
 import 'package:hawk_control_app/data/constants.dart';
 import 'package:hawk_control_app/data/translations/keys.dart';
 
@@ -17,6 +17,7 @@ class AppDrawer extends StatelessWidget {
     LocaleController localeController = Get.find<LocaleController>();
 
     return Drawer(
+      elevation: 3.0,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [

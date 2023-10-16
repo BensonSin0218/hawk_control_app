@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hawk_control_app/data/constants.dart';
-import 'package:hawk_control_app/data/styles.dart';
+import 'package:hawk_control_app/data/style_schemes.dart';
 import 'package:hawk_control_app/data/translations/keys.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
 import 'package:hawk_control_app/views/components/introduction_container.dart';
@@ -27,7 +27,7 @@ class IntroductionController extends GetxController {
   void jumpToPage(index) => pageController.jumpToPage(index);
 
   void toPreviousPage() => pageController.previousPage(
-      duration: Durations.pageViewer, curve: pageCurve);
+      duration: DurationSchemes.pageViewer, curve: pageCurve);
 
   void toNextPage() {
     if (pageIndex.value == pages.length - 1) {
@@ -37,6 +37,7 @@ class IntroductionController extends GetxController {
       return;
     }
 
-    pageController.nextPage(duration: Durations.pageViewer, curve: pageCurve);
+    pageController.nextPage(
+        duration: DurationSchemes.pageViewer, curve: pageCurve);
   }
 }

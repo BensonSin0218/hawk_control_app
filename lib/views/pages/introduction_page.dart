@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hawk_control_app/controllers/introduction_controller.dart';
-import 'package:hawk_control_app/data/styles.dart';
+import 'package:hawk_control_app/data/style_schemes.dart';
 
 class IntroductionPage extends StatelessWidget {
   const IntroductionPage({super.key});
@@ -31,11 +31,6 @@ class IntroductionPage extends StatelessWidget {
                     onPressed: introductionController.pageIndex.value > 0
                         ? introductionController.toPreviousPage
                         : null,
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll<Color>(
-                            introductionController.pageIndex.value > 0
-                                ? Colors.blue
-                                : Colors.grey)),
                     child: Text(
                       "Back!",
                       style: Theme.of(context).textTheme.labelLarge,
@@ -63,7 +58,7 @@ class IntroductionPage extends StatelessWidget {
                           height: 16.0,
                           margin: const EdgeInsets.all(4.0),
                           curve: Curves.fastEaseInToSlowEaseOut,
-                          duration: Durations.animate,
+                          duration: DurationSchemes.animate,
                         ),
                       ),
                     ),

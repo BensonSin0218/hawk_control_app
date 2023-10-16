@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColor {
+class ColorSchemes {
   static const Color primary = Colors.blue;
   static const Color onPrimary = Colors.blueAccent;
   static final Color secondary = Colors.blue.shade500;
@@ -9,28 +9,31 @@ class AppColor {
   static final Color background = Colors.grey.shade900;
   static final Color onBackground = Colors.grey.shade600;
 
+  static const Color success = Colors.green;
+  static final Color onSuccess = Colors.green.shade500;
+
   static const Color error = Colors.red;
   static final Color onError = Colors.red.shade500;
 }
 
-class Durations {
+class DurationSchemes {
   static const Duration animate = Duration(milliseconds: 500);
   static const Duration errorSnackBar = Duration(seconds: 3);
   static const Duration pageViewer = Duration(milliseconds: 500);
 }
 
-class ThemeScheme {
+class ThemeSchemes {
   static ThemeData dark = ThemeData(
-    primaryColor: AppColor.primary,
+    primaryColor: ColorSchemes.primary,
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
-      primary: AppColor.primary,
-      onPrimary: AppColor.onPrimary,
-      secondary: AppColor.secondary,
-      onSecondary: AppColor.onSecondary,
-      error: AppColor.error,
-      onError: AppColor.onError,
-      background: AppColor.background,
+      primary: ColorSchemes.primary,
+      onPrimary: ColorSchemes.onPrimary,
+      secondary: ColorSchemes.secondary,
+      onSecondary: ColorSchemes.onSecondary,
+      error: ColorSchemes.error,
+      onError: ColorSchemes.onError,
+      background: ColorSchemes.background,
       onBackground: Colors.grey.shade600,
       surface: Colors.white,
       onSurface: Colors.white,
@@ -50,15 +53,15 @@ class ThemeScheme {
   );
 
   static ThemeData light = ThemeData(
-    primaryColor: AppColor.primary,
+    primaryColor: ColorSchemes.primary,
     colorScheme: ColorScheme(
       brightness: Brightness.light,
-      primary: AppColor.primary,
-      onPrimary: AppColor.onPrimary,
-      secondary: AppColor.secondary,
-      onSecondary: AppColor.onSecondary,
-      error: AppColor.error,
-      onError: AppColor.onError,
+      primary: ColorSchemes.primary,
+      onPrimary: ColorSchemes.onPrimary,
+      secondary: ColorSchemes.secondary,
+      onSecondary: ColorSchemes.onSecondary,
+      error: ColorSchemes.error,
+      onError: ColorSchemes.onError,
       background: Colors.white,
       onBackground: Colors.white,
       surface: Colors.white,

@@ -12,6 +12,6 @@ enum Language {
   final String name;
   final Locale locale;
 
-  Locale get getLocale => locale;
   String get getDisplayName => '$emoji $name';
+  Locale get getLocale => locale;
 }

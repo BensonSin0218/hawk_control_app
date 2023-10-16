@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hawk_control_app/controllers/drone_controller.dart';
-import 'package:hawk_control_app/data/styles.dart';
+import 'package:hawk_control_app/data/style_schemes.dart';
 import 'package:hawk_control_app/data/translations/keys.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
 import 'package:hawk_control_app/utils/validations.dart';
@@ -50,7 +50,7 @@ class ConnectionPage extends StatelessWidget {
                                   message:
                                       ErrorTranslationKeys.illegalIPAddress.tr,
                                   backgroundColor: Colors.red,
-                                  duration: Durations.errorSnackBar,
+                                  duration: DurationSchemes.errorSnackBar,
                                   snackPosition: SnackPosition.TOP,
                                 ));
                                 return;

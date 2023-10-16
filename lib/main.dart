@@ -6,7 +6,7 @@ import 'package:hawk_control_app/bindings/init_binding.dart';
 import 'package:hawk_control_app/controllers/locale_controller.dart';
 import 'package:hawk_control_app/controllers/theme_controller.dart';
 import 'package:hawk_control_app/data/translations/messages.dart';
-import 'package:hawk_control_app/data/styles.dart';
+import 'package:hawk_control_app/data/style_schemes.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
 
 class HawkControlApp extends StatelessWidget {
@@ -19,8 +19,8 @@ class HawkControlApp extends StatelessWidget {
 
     return GetMaterialApp(
       initialRoute: AppRoutes.splash,
-      theme: ThemeScheme.light,
-      darkTheme: ThemeScheme.dark,
+      theme: ThemeSchemes.light,
+      darkTheme: ThemeSchemes.dark,
       themeMode: themeController.isLightThemeMode.value
           ? ThemeMode.light
           : ThemeMode.dark,
