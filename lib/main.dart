@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hawk_control_app/bindings/init_binding.dart';
+import 'package:hawk_control_app/controllers/locale_controller.dart';
 import 'package:hawk_control_app/controllers/theme_controller.dart';
 import 'package:hawk_control_app/data/translations/messages.dart';
 import 'package:hawk_control_app/data/styles.dart';
@@ -14,6 +15,7 @@ class HawkControlApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeController themeController = Get.put(ThemeController());
+    LocaleController localeController = Get.put(LocaleController());
 
     return GetMaterialApp(
       initialRoute: AppRoutes.splash,
@@ -22,8 +24,8 @@ class HawkControlApp extends StatelessWidget {
       themeMode: themeController.isLightThemeMode.value
           ? ThemeMode.light
           : ThemeMode.dark,
-      locale: const Locale('en', 'US'),
-      fallbackLocale: const Locale('zh', 'HK'),
+      locale: localeController.locale,
+      fallbackLocale: const Locale('en', 'US'),
       translations: Messages(),
       defaultTransition: Transition.rightToLeftWithFade,
       getPages: AppPages.routes,

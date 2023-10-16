@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hawk_control_app/controllers/user_controller.dart';
+import 'package:hawk_control_app/controllers/app_controller.dart';
 import 'package:hawk_control_app/data/constants.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
 
@@ -12,7 +12,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  final UserController userSettingController = Get.find<UserController>();
+  final AppController userSettingController = Get.find<AppController>();
 
   @override
   void initState() {

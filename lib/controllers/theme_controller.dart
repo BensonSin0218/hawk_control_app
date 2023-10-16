@@ -23,6 +23,7 @@ class ThemeController extends GetxController {
     Get.changeThemeMode(
         isLightThemeMode.value ? ThemeMode.dark : ThemeMode.light);
 
+    // Update
     isLightThemeMode.value = !isLightThemeMode.value;
     storage.write(StorageKeys.isLightThemeMode, isLightThemeMode.value);
   }

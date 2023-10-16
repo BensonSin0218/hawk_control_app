@@ -3,6 +3,16 @@ class TranslationKeys {
   static const String ipAddress = 'ipAddress';
 }
 
+class ThemeTranslationKeys {
+  static const String theme = 'theme';
+  static const String lightTheme = 'lightTheme';
+  static const String darkTheme = 'darkTheme';
+}
+
+class LocaleTranslationKeys {
+  static const String locale = 'locale';
+}
+
 class PageTranslationKeys {
   static const String introductionPageTitle = 'introductionPageTitle';
   static const String introductionPage1Title = 'introductionPage1Title';

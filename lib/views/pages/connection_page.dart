@@ -60,7 +60,10 @@ class ConnectionPage extends StatelessWidget {
                               Get.toNamed(AppRoutes.control);
                             }
                           : null,
-                      child: Text(TranslationKeys.connect.tr),
+                      child: Text(
+                        TranslationKeys.connect.tr,
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
                     ),
                   )
                 ],

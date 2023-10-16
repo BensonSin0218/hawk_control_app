@@ -31,13 +31,50 @@ class ThemeScheme {
       error: AppColor.error,
       onError: AppColor.onError,
       background: AppColor.background,
-      onBackground: AppColor.onBackground,
+      onBackground: Colors.grey.shade600,
       surface: Colors.white,
       onSurface: Colors.white,
     ),
-    scaffoldBackgroundColor: AppColor.background,
+    scaffoldBackgroundColor: Colors.grey.shade900,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.blueAccent,
+        backgroundColor: Colors.blue,
+        disabledBackgroundColor: Colors.grey,
+        elevation: 3.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32.0),
+        ),
+      ),
+    ),
   );
 
-  static ThemeData light =
-      ThemeData(brightness: Brightness.light, primaryColor: AppColor.primary);
+  static ThemeData light = ThemeData(
+    primaryColor: AppColor.primary,
+    colorScheme: ColorScheme(
+      brightness: Brightness.light,
+      primary: AppColor.primary,
+      onPrimary: AppColor.onPrimary,
+      secondary: AppColor.secondary,
+      onSecondary: AppColor.onSecondary,
+      error: AppColor.error,
+      onError: AppColor.onError,
+      background: Colors.white,
+      onBackground: Colors.white,
+      surface: Colors.white,
+      onSurface: Colors.white,
+    ),
+    scaffoldBackgroundColor: Colors.white,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.blueAccent,
+        backgroundColor: Colors.blue,
+        disabledBackgroundColor: Colors.grey,
+        elevation: 3.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32.0),
+        ),
+      ),
+    ),
+  );
 }

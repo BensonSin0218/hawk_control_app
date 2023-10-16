@@ -5,7 +5,6 @@ class AppInformation {
 
 class StorageKeys {
   static const String hasReadIntroduction = 'hasReadIntroduction';
-  static const String languageCode = 'languageCode';
-  static const String countryCode = 'countryCode';
+  static const String locale = 'locale';
   static const String isLightThemeMode = 'isLightThemeMode';
 }
