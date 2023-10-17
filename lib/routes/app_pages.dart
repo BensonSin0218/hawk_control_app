@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hawk_control_app/bindings/app_binding.dart';
 import 'package:hawk_control_app/views/pages/connection_page.dart';
 import 'package:hawk_control_app/views/pages/control_page.dart';
 import 'package:hawk_control_app/views/pages/introduction_page.dart';
@@ -15,7 +16,10 @@ class AppPages {
       page: () => const SplashPage(),
     ),
     GetPage(name: AppRoutes.introduction, page: () => const IntroductionPage()),
-    GetPage(name: AppRoutes.start, page: () => const StartPage()),
+    GetPage(
+        name: AppRoutes.start,
+        page: () => const StartPage(),
+        binding: AppBinding()),
     GetPage(name: AppRoutes.connection, page: () => const ConnectionPage()),
     GetPage(name: AppRoutes.control, page: () => const ControlPage())
   ];

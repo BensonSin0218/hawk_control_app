@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:hawk_control_app/bindings/init_binding.dart';
+import 'package:hawk_control_app/bindings/app_binding.dart';
 import 'package:hawk_control_app/controllers/locale_controller.dart';
 import 'package:hawk_control_app/controllers/theme_controller.dart';
 import 'package:hawk_control_app/data/translations/messages.dart';
@@ -29,7 +29,7 @@ class HawkControlApp extends StatelessWidget {
       translations: Messages(),
       defaultTransition: Transition.rightToLeftWithFade,
       getPages: AppPages.routes,
-      initialBinding: InitBinding(),
+      initialBinding: AppBinding(),
       unknownRoute: AppPages.notFound,
       debugShowCheckedModeBanner: false,
     );

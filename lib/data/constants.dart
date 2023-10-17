@@ -7,4 +7,6 @@ class StorageKeys {
   static const String hasReadIntroduction = 'hasReadIntroduction';
   static const String locale = 'locale';
   static const String isLightThemeMode = 'isLightThemeMode';
+
+  static const String debugMode = "debugMode";
 }

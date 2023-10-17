@@ -7,6 +7,8 @@ class AppController extends GetxController {
 
   RxBool hasReadIntroduction = false.obs;
 
+  RxBool debugMode = true.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -14,5 +16,15 @@ class AppController extends GetxController {
     if (storage.hasData(StorageKeys.hasReadIntroduction)) {
       hasReadIntroduction.value = storage.read(StorageKeys.hasReadIntroduction);
     }
+
+    if (storage.hasData(StorageKeys.debugMode)) {
+      debugMode.value = storage.read(StorageKeys.debugMode);
+    }
+  }
+
+  void setDebugMode(bool mode) {
+    debugMode.value = mode;
+
+    storage.write(StorageKeys.debugMode, debugMode.value);
   }
 }
