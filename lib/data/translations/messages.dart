@@ -7,6 +7,7 @@ class Messages extends Translations {
         'en_US': {
           TranslationKeys.connect: 'Connect',
           TranslationKeys.ipAddress: 'IP Address',
+          TranslationKeys.waitingStream: 'Wait Streaming...',
           ThemeTranslationKeys.lightTheme: 'Light Theme',
           ThemeTranslationKeys.darkTheme: 'Dark Theme',
           LocaleTranslationKeys.locale: 'Locale',
@@ -27,6 +28,7 @@ class Messages extends Translations {
         'zh_CN': {
           TranslationKeys.connect: '连接',
           TranslationKeys.ipAddress: 'IP地址',
+          TranslationKeys.waitingStream: '等待流媒体...',
           ThemeTranslationKeys.lightTheme: '淺色主題',
           ThemeTranslationKeys.darkTheme: '黑暗主题',
           LocaleTranslationKeys.locale: '语言环境',
@@ -44,6 +46,7 @@ class Messages extends Translations {
         'zh_HK': {
           TranslationKeys.connect: '连接',
           TranslationKeys.ipAddress: 'IP地址',
+          TranslationKeys.waitingStream: '等待串流媒體...',
           ThemeTranslationKeys.lightTheme: '淺色主題',
           ThemeTranslationKeys.darkTheme: '黑暗主題',
           LocaleTranslationKeys.locale: '語言環境',

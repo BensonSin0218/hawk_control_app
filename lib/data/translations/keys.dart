@@ -1,6 +1,7 @@
 class TranslationKeys {
   static const String connect = 'connect';
   static const String ipAddress = 'ipAddress';
+  static const String waitingStream = 'waitingStream';
 }
 
 class ThemeTranslationKeys {

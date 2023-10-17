@@ -12,11 +12,13 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  flutter_vlc_player: ^7.4.0
   get: ^4.6.6
   get_storage: ^2.1.1
   socket_io_client: ^2.0.3+1
   flutter_joystick: ^0.0.3
+  media_kit: ^1.1.9
+  media_kit_libs_video: ^1.0.4
+  media_kit_video: ^1.2.2
 
 dev_dependencies:
   flutter_test:

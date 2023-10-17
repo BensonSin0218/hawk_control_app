@@ -1,21 +1,24 @@
-import 'package:flutter_vlc_player/flutter_vlc_player.dart';
 import 'package:get/get.dart';
 import 'package:hawk_control_app/classes/drone.dart';
 import 'package:hawk_control_app/data/enums/rtsp_stream.dart';
 import 'package:hawk_control_app/data/enums/socket.dart';
+import 'package:media_kit/media_kit.dart';
+import 'package:media_kit_video/media_kit_video.dart';
 import 'package:socket_io_client/socket_io_client.dart' as SocketIO;
 
 class DroneController extends GetxController {
   late SocketIO.Socket socket;
-  late VlcPlayerController vlcPlayerController;
+  late Player streamingPlayer;
+  late VideoController streamingController;
 
   RxString ipAddress = ''.obs;
   Rx<Drone> drone = Drone().obs;
 
   @override
   void dispose() async {
-    await vlcPlayerController.stopRendererScanning();
-    await vlcPlayerController.dispose();
+    // await vlcPlayerController.stopRendererScanning();
+    // await vlcPlayerController.dispose();
+    await streamingPlayer.dispose();
 
     super.dispose();
   }
@@ -35,8 +38,18 @@ class DroneController extends GetxController {
   }
 
   void _connectRTSPStream() {
-    vlcPlayerController = VlcPlayerController.network(
-        RTSPStream.color.getURL(ipAddress.value),
-        autoPlay: true);
+    // vlcPlayerController = VlcPlayerController.network(
+    //     RTSPStream.color.getURL(ipAddress.value),
+    //     autoPlay: true);
+    streamingPlayer = Player();
+    streamingPlayer.open(Media(RTSPStream.color.getURL(ipAddress.value)));
+    streamingController = VideoController(
+      streamingPlayer,
+      configuration: const VideoControllerConfiguration(
+        enableHardwareAcceleration: true,
+        width: 640,
+        height: 480,
+      ),
+    );
   }
 }

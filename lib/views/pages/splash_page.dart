@@ -20,10 +20,9 @@ class _SplashPageState extends State<SplashPage> {
 
     // Timer: For delay to navigate to start page / introduction page
     Future.delayed(const Duration(seconds: 3), () {
-      // Get.offAllNamed(userSettingController.hasReadIntroduction.value
-      //     ? AppRoutes.start
-      //     : AppRoutes.introduction);
-      Get.offAllNamed(AppRoutes.introduction);
+      Get.offAllNamed(userSettingController.hasReadIntroduction.value
+          ? AppRoutes.start
+          : AppRoutes.introduction);
     });
   }
 

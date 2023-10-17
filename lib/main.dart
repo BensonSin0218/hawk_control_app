@@ -8,6 +8,7 @@ import 'package:hawk_control_app/controllers/theme_controller.dart';
 import 'package:hawk_control_app/data/translations/messages.dart';
 import 'package:hawk_control_app/data/style_schemes.dart';
 import 'package:hawk_control_app/routes/app_pages.dart';
+import 'package:media_kit/media_kit.dart';
 
 class HawkControlApp extends StatelessWidget {
   const HawkControlApp({super.key});
@@ -45,6 +46,7 @@ Future<void> main() async {
   await SystemChrome.setPreferredOrientations(
       [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
   await GetStorage.init();
+  MediaKit.ensureInitialized();
 
   runApp(const HawkControlApp());
 }
