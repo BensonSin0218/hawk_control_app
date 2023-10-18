@@ -8,6 +8,7 @@ import 'package:socket_io_client/socket_io_client.dart' as SocketIO;
 
 class DroneController extends GetxController {
   late SocketIO.Socket socket;
+
   late Player streamingPlayer;
   late VideoController streamingController;
 
@@ -16,8 +17,6 @@ class DroneController extends GetxController {
 
   @override
   void dispose() async {
-    // await vlcPlayerController.stopRendererScanning();
-    // await vlcPlayerController.dispose();
     await streamingPlayer.dispose();
 
     super.dispose();
@@ -38,9 +37,6 @@ class DroneController extends GetxController {
   }
 
   void _connectRTSPStream() {
-    // vlcPlayerController = VlcPlayerController.network(
-    //     RTSPStream.color.getURL(ipAddress.value),
-    //     autoPlay: true);
     streamingPlayer = Player();
     streamingPlayer.open(Media(RTSPStream.color.getURL(ipAddress.value)));
     streamingController = VideoController(
